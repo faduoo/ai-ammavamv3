@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Ammavan™</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================================
+     APP
+========================================= -->
+
+<div class="app">
+
+
+    <!-- =====================================
+         SIDEBAR
+    ====================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-image">
+                <img src="assets/ammavan-happy.jpg">
+            </div>
+
+            <div>
+                <h1>AI AMMAVAN</h1>
+                <p>THE UNOFFICIAL LIFE ADVISOR™</p>
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <button class="nav-item active">
+                <span>💬</span>
+                Chat
+            </button>
+
+            <button class="nav-item">
+                <span>🎭</span>
+                Modes
+            </button>
+
+            <button class="nav-item">
+                <span>📊</span>
+                Advice Tracker
+            </button>
+
+            <button class="nav-item">
+                <span>🧠</span>
+                Ammavan Memory
+            </button>
+
+            <button class="nav-item">
+                <span>🛠</span>
+                Useless Tools
+            </button>
+
+            <button class="nav-item">
+                <span>⚙</span>
+                Settings
+            </button>
+
+        </nav>
+
+
+        <!-- RANDOM NOTE -->
+
+        <div class="sticky-note">
+
+            <p>
+                Pedikkenda...
+                Njan parayunnath
+                ninte nallathinu vendiya...
+            </p>
+
+            <span>
+                — Ammavan
+            </span>
+
+        </div>
+
+
+        <!-- CURRENT MODE -->
+
+        <div class="current-mode">
+
+            <img src="assets/ammavan-thinking.jpg">
+
+            <div>
+
+                <small>
+                    Currently in
+                </small>
+
+                <strong>
+                    NORMAL MODE
+                </strong>
+
+            </div>
+
+            <span>⌄</span>
+
+        </div>
+
+
+        <div class="sidebar-bottom">
+
+            <span>😐</span>
+
+            <p>
+                Why did I even<br>
+                build this?
+            </p>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================
+         CENTER
+    ====================================== -->
+
+    <main
+        id="mainContent"
+        class="main"
+    >
+
+
+        <!-- TOP -->
+
+        <header class="topbar">
+
+            <div class="search">
+
+                ✨
+
+                <input
+                    id="messageInputTop"
+                    placeholder="Enthada chodikkanullath?"
+                >
+
+            </div>
+
+
+            <div class="top-actions">
+
+                <div class="online">
+                    <span></span>
+                    Online
+                </div>
+
+                <button>🔊</button>
+
+                <button>☰</button>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- CHAT -->
+
+        <section class="chat-container">
+
+
+            <div
+                id="chat"
+                class="chat"
+            >
+
+                <!-- WELCOME -->
+
+                <div
+                    id="welcome"
+                    class="welcome"
+                >
+
+                    <img
+                        src="assets/ammavan-happy.jpg"
+                    >
+
+                    <h2>
+                        Enthada?
+                    </h2>
+
+                    <p>
+                        Ask anything.
+                        I'll find a problem.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- THINKING -->
+
+            <div
+                id="thinking"
+                class="thinking"
+                style="display:none;"
+            >
+
+                <div class="thinking-image">
+
+                    <img
+                        src="assets/ammavan-thinking.jpg"
+                    >
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        Ammavan is thinking...
+                    </strong>
+
+                    <p id="thinkingText">
+                        Hmm...
+                        Ithu vechu oru problem
+                        kandupidikkanam.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- QUICK QUESTIONS -->
+
+            <div class="quick-questions">
+
+                <button
+                    onclick="sendStarter('Enikku oru job kitti')"
+                >
+                    I got a job
+                </button>
+
+                <button
+                    onclick="sendStarter('Enikku 95 mark kitti')"
+                >
+                    I got good marks
+                </button>
+
+                <button
+                    onclick="sendStarter('Njan Bangalore pokunnu')"
+                >
+                    I'm going to Bangalore
+                </button>
+
+                <button
+                    onclick="sendStarter('Njan bike vangaan pokunnu')"
+                >
+                    I'm buying a bike
+                </button>
+
+            </div>
+
+
+
+            <!-- INPUT -->
+
+            <form
+                id="chatForm"
+                class="input-area"
+            >
+
+                <button
+                    type="button"
+                    class="attach"
+                >
+                    +
+                </button>
+
+                <input
+                    id="messageInput"
+                    autocomplete="off"
+                    placeholder="Enthengilum chodikkada..."
+                >
+
+                <button
+                    type="submit"
+                    class="send"
+                >
+                    ➤
+                </button>
+
+            </form>
+
+
+            <div class="input-footer">
+
+                <span>
+                    ⚠ Advice is unsolicited.
+                </span>
+
+                <span>
+                    Powered by AI. Unfortunately.
+                </span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================
+         RIGHT PANEL
+    ====================================== -->
+
+    <aside class="right-panel">
+
+
+        <!-- CHARACTER -->
+
+        <div class="character-card">
+
+            <div
+                id="goodBut"
+                class="good-but"
+            >
+                GOOD... BUT™
+            </div>
+
+
+            <div id="ammavanStage" class="character-image">
+
+                <div
+                    id="thoughtBubble"
+                    class="thought-bubble"
+                >
+                    Hmm...
+                </div>
+
+                <img
+                    id="ammavanImage"
+                    src="assets/ammavan-happy.jpg"
+                >
+
+            </div>
+
+
+            <div class="character-title">
+
+                <div class="character-icon">
+                    👨
+                </div>
+
+                <div>
+
+                    <h2>
+                        AI AMMAVAN
+                    </h2>
+
+                    <p>
+                        The Unofficial Life Advisor™
+                    </p>
+
+                </div>
+
+                <div class="mode-badge">
+
+                    <span></span>
+
+                    <small>
+                        Currently in
+                    </small>
+
+                    <strong id="currentMood">
+                        Normal Mode
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- STATUS -->
+
+            <div class="status-card">
+
+                <div>
+
+                    <small>
+                        Mood
+                    </small>
+
+                    <strong id="ammavanMood">
+                        😐 Disappointed
+                    </strong>
+
+                </div>
+
+
+                <div class="divider"></div>
+
+
+                <div>
+
+                    <small>
+                        Status
+                    </small>
+
+                    <strong id="ammavanStatus">
+                        Waiting to judge...
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================
+             DIAGNOSTICS
+        ================================== -->
+
+        <div class="diagnostics">
+
+            <h3>
+                AMMAVAN DIAGNOSTICS
+            </h3>
+
+
+            <div class="stat">
+
+                <div>
+                    <span>Negativity</span>
+                    <b>91%</b>
+                </div>
+
+                <div class="bar">
+                    <span style="width:91%"></span>
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div>
+                    <span>Unsolicited Advice</span>
+                    <b>97%</b>
+                </div>
+
+                <div class="bar">
+                    <span style="width:97%"></span>
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div>
+                    <span>Career Concern</span>
+                    <b>82%</b>
+                </div>
+
+                <div class="bar">
+                    <span style="width:82%"></span>
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div>
+                    <span>Ammavan Energy</span>
+                    <b>100%</b>
+                </div>
+
+                <div class="bar">
+                    <span style="width:100%"></span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================
+             MODES
+        ================================== -->
+
+        <div class="modes">
+
+            <div class="modes-header">
+
+                <h3>
+                    QUICK AMMAVAN MODES
+                </h3>
+
+                <span>
+                    View All →
+                </span>
+
+            </div>
+
+
+            <div class="mode-grid">
+
+
+                <button onclick="changeAmmavan('angry')">
+
+                    <img src="assets/ammavan-angry.jpg">
+
+                    <span>
+                        Angry
+                    </span>
+
+                </button>
+
+
+                <button onclick="changeAmmavan('happy')">
+
+                    <img src="assets/ammavan-happy.jpg">
+
+                    <span>
+                        Happy
+                    </span>
+
+                </button>
+
+
+                <button onclick="changeAmmavan('confused')">
+
+                    <img src="assets/ammavan-confused.jpg">
+
+                    <span>
+                        Confused
+                    </span>
+
+                </button>
+
+
+                <button onclick="changeAmmavan('surprize')">
+
+                    <img src="assets/ammavan-surprize.jpg">
+
+                    <span>
+                        Surprised
+                    </span>
+
+                </button>
+
+
+                <button onclick="changeAmmavan('sleeping')">
+
+                    <img src="assets/ammavan-sleeping.jpg">
+
+                    <span>
+                        Tired
+                    </span>
+
+                </button>
+
+
+                <button onclick="changeAmmavan('salary')">
+
+                    <img src="assets/ammavan-salaraj.jpg">
+
+                    <span>
+                        Salary
+                    </span>
+
+                </button>
+
+
+                <button onclick="changeAmmavan('work')">
+
+                    <img src="assets/ammavan-work.jpg">
+
+                    <span>
+                        Office
+                    </span>
+
+                </button>
+
+
+                <button onclick="changeAmmavan('mindout')">
+
+                    <img src="assets/ammavan-mindout.jpg">
+
+                    <span>
+                        Family
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <div class="coming-soon">
+
+                More Ammavan modes
+                coming soon... 😐
+
+            </div>
+
+        </div>
+
+    </aside>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
