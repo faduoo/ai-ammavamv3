@@ -187,7 +187,7 @@ async function sendMessage() {
 
 
         const response =
-            await fetch("http://127.0.0.1:5000/chat", {
+            await fetch("https://ai-ammavamv3-2.onrender.com/chat", {
 
                 method: "POST",
 
@@ -521,7 +521,7 @@ async function playAmmavanVoice(text) {
 
         const response =
             await fetch(
-                "http://127.0.0.1:5000/speak",
+                "https://ai-ammavamv3-2.onrender.com/speak",
                 {
 
                     method: "POST",
